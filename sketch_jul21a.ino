@@ -56,6 +56,7 @@ void loop() {
   delay(10000);
   //Turn off relay 2
   relayControl(relay,1);
+  FileSave("This is my sampleText.");
 }
 
 void analogCheckMod(int pinNumber){
@@ -111,7 +112,7 @@ myFile = SD.open("test.txt", FILE_WRITE);
 // if the file opened okay, write to it:
 if (myFile) {
 Serial.print("Writing to test.txt...");
-myFile.println("Testing 1,2,3");
+myFile.println(sampleText);
 for (int i = 0; i < 20; i++) {
 myFile.println(i);
 }
